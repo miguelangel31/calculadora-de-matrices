@@ -222,16 +222,9 @@ int main(){
 				
 				cout<<matriz2[i][j]<<" ";
 			}
-			cout<<endl;
+			cout<<endl;	
 		}
 		
-		
-		
-	
-		
-		
-	
-	
 		
 		for(int i=0;i<nf;i++){
 			for(int j=0;j<nc2;j++){
