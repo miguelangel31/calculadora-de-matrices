@@ -7,7 +7,7 @@ using namespace std;
 int main(){
 	int matriz [5][5], matrizt[5][5], matriz2[5][5],matrizproducto[10][10]={{'\0'}}, det, producto, producto2, i;
 	double comprobante= 0,nf, nc, nf2, nc2, z;
-	char tipo[15], simetrica[]="simetrica", determinante[]="determinante", multiplicar[]="multiplicar";
+	char tipo[15], simetrica[]="simetrica", determinante[]="determinante", multiplicar[]="multiplicar", sumar[]="sumar", restar[]="restar";
 	
 	
 	cout<<"que desea hacer? : ";cin.getline(tipo, 15, '\n');
@@ -222,9 +222,16 @@ int main(){
 				
 				cout<<matriz2[i][j]<<" ";
 			}
-			cout<<endl;	
+			cout<<endl;
 		}
 		
+		
+		
+	
+		
+		
+	
+	
 		
 		for(int i=0;i<nf;i++){
 			for(int j=0;j<nc2;j++){
@@ -257,7 +264,146 @@ int main(){
 		}
 		
 	}
+	//opcion suma===============================================================000
+	else if(strcmp(tipo,sumar)==0){
+		do{
+			
+			comprobante =0;
+		cout<<"cuantas filas y columnas tiene la matriz 1: ";cin>>nf;cin>>nc;
+	cout<<"\n";
+	cout<<"*********************\n";
+	cout<<"cuantas filas y columnas tiene la matriz 2: ";cin>>nf2;cin>>nc2;
 	
+	comprobante= nf/nf2 + nc/nc2;
+	}while(comprobante != 2);
+	cout<<"\n";
+	cout<<"*********************\n";
+	
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<"introduce un valor para ["<<i<<"]["<<j<<"] ";cin>>matriz[i][j];
+		}
+	}
+	cout<<"\n";
+	cout<<"*********************\n";
+	cout<<"matriz 1:\n ";
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<matriz[i][j]<<" ";
+		}
+		cout<<"\n ";
+	}
+	
+	cout<<"\n";
+	cout<<"*********************\n";
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<"introduce un valor para ["<<i<<"]["<<j<<"] ";cin>>matriz2[i][j];
+		}
+	}
+	
+	cout<<"\n";
+	cout<<"*********************\n";
+	cout<<"matriz 2: \n ";
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<matriz[i][j]<<" ";
+		}
+	cout<<"\n ";
+	}
+	cout<<"\n";
+	cout<<"*********************\n";
+	
+	for(int i=0;i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			matrizproducto[i][j] = matriz[i][j]+matriz2[i][j];
+		}
+	}
+	
+	cout<<"La suma de las matrices es: \n ";
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<matrizproducto[i][j]<<" ";
+		}
+		cout<<"\n ";
+	}
+	// opcion restar======================================================================================
+	}else if(strcmp(tipo, restar)== 0){
+		do{
+			
+			comprobante= 0;
+		cout<<"cuantas filas y columnas tiene la matriz 1: ";cin>>nf;cin>>nc;
+	cout<<"\n";
+	cout<<"*********************\n";
+	cout<<"cuantas filas y columnas tiene la matriz 2: ";cin>>nf2;cin>>nc2;
+	
+	comprobante= nf/nf2 + nc/nc2;
+	}while(comprobante != 2);
+	cout<<"\n";
+	cout<<"*********************\n";
+	
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<"introduce un valor para ["<<i<<"]["<<j<<"] ";cin>>matriz[i][j];
+		}
+	}
+	cout<<"\n";
+	cout<<"*********************\n";
+	cout<<"matriz 1:\n ";
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<matriz[i][j]<<" ";
+		}
+		cout<<"\n ";
+	}
+	
+	cout<<"\n";
+	cout<<"*********************\n";
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<"introduce un valor para ["<<i<<"]["<<j<<"] ";cin>>matriz2[i][j];
+		}
+	}
+	
+	cout<<"\n";
+	cout<<"*********************\n";
+	cout<<"matriz 2: \n ";
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<matriz[i][j]<<" ";
+		}
+	cout<<"\n ";
+	}
+	cout<<"\n";
+	cout<<"*********************\n";
+	
+	for(int i=0;i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			matrizproducto[i][j] = matriz[i][j]-matriz2[i][j];
+		}
+	}
+	
+	cout<<"La resta de las matrices es: \n ";
+	for(int i=0; i<nf;i++){
+		for(int j=0;j<nc;j++){
+			
+			cout<<matrizproducto[i][j]<<" ";
+		}
+		cout<<"\n ";
+	}
+	
+	}
 	else{
 		cout<<"Demomento no disponemos de esta opcion";
 	}
